@@ -139,8 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1.Greedy-Practice2.cpp" />
+    <ClCompile Include="1.Greedy-Practice3.cpp" />
     <ClCompile Include="2.Implementation_practice3.cpp" />
     <ClCompile Include="2.Implementation_exercise.cpp" />
+    <ClCompile Include="1.Greedy-Practice4.cpp" />
+    <ClCompile Include="1.Greedy-Problem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
