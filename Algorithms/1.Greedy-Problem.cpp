@@ -187,3 +187,59 @@
 //	}
 //	cout << sum;
 //}
+
+//백준 No. 2217 로프
+//#include <bits/stdc++.h>
+//using namespace std;
+//int main() {
+//	int n;
+//	cin >> n;
+//	vector<int> v;
+//	int temp;
+//	for (int i = 0; i < n; i++) {
+//		cin >> temp;
+//		v.push_back(temp);
+//	}
+//	sort(v.begin(), v.end(), greater<int>());
+//	int answer =0;
+//	for (int i = 0; i < n; i++) {
+//		if (answer <= (i + 1) * v[i])
+//			answer = (i + 1) * v[i];
+//	}
+//	cout << answer;
+//}
+
+//백준 No. 11000 강의실 배정
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int n;
+	cin >> n;
+	vector<vector<int>> v(n);
+	priority_queue<int, vector<int>, greater<int> > pq;
+	int min, max;
+	for (int i = 0; i < n; i++) {
+		cin >> min >> max;
+		v[i].push_back(min);
+		v[i].push_back(max);
+	}
+	sort(v.begin(), v.end());
+	pq.push(v[0][1]);
+	int start;
+	int end;
+	for (int i = 1; i < n; i++) {
+		start = v[i][0];
+		end = v[i][1];
+		if (pq.top() > start) {
+			pq.push(end);
+		}
+		else {
+			pq.pop();
+			pq.push(end);
+		}
+	}
+
+	cout << pq.size();
+}
